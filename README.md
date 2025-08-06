@@ -1,3 +1,19 @@
+Usage:
+```bash
+python3 main.py --mode test
+```
+Output:
+```bash
+train Average loss: 0.0009, Accuracy: 99.98000%
+test Average loss: 0.0100, Accuracy: 99.78000%
+inverted_test Average loss: 3.3894, Accuracy: 30.31000%
+usps_test Average loss: 0.4741, Accuracy: 86.49726%
+```
+
+Original README below:
+
+---------------------
+
 # MNIST-SOPCNN
 
 This is my implementation of Stochastic Optimization of Plain Convolutional Neural Networks (SOPCNN) on the MNIST dataset.

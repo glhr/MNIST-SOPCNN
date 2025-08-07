@@ -8,7 +8,10 @@ train Average loss: 0.0009, Accuracy: 99.98000%
 test Average loss: 0.0100, Accuracy: 99.78000%
 inverted_test Average loss: 3.3894, Accuracy: 30.31000%
 usps_test Average loss: 0.4741, Accuracy: 86.49726%
+fashionmnist_test Average loss: 5.8901, Accuracy: 6.99000%
 ```
+
+Images that were incorrectly classified can be visualized using the notebook `make_mosaic.ipynb`.
 
 Original README below:
 

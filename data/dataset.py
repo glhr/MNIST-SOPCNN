@@ -83,3 +83,15 @@ def get_usps_test_loader(batch_size, data_path):
     usps_test_loader = torch.utils.data.DataLoader(usps_test_dataset, batch_size=batch_size, shuffle=False)
     
     return usps_test_loader
+
+def get_fashionmnist_test_loader(batch_size, data_path):
+    transform = transforms.Compose([
+        transforms.Resize((28, 28)),  # Rescale to 28x28
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))  # Normalize with MNIST mean and std
+    ])
+    fashionmnist_test_dataset = datasets.FashionMNIST(data_path, train=False, download=True, transform=transform)
+    fashionmnist_test_loader = torch.utils.data.DataLoader(fashionmnist_test_dataset, batch_size=batch_size, shuffle=False)
+
+    return fashionmnist_test_loader
+

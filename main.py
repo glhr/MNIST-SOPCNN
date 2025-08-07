@@ -2,7 +2,7 @@
 
 import torch
 from config import config
-from data.dataset import get_train_loader, get_mnist_loaders, get_inverted_mnist_test_loader, get_usps_test_loader
+from data.dataset import *
 from models.model import SOPCNN
 from train import train
 from test import test
@@ -21,6 +21,7 @@ def main():
         train_loader, test_loader = get_mnist_loaders(config.batch_size, config.data_path, mode=args.mode)
         inverted_test_loader = get_inverted_mnist_test_loader(config.batch_size, config.data_path)
         usps_test_loader = get_usps_test_loader(config.batch_size, config.data_path)
+        fashionmnist_test_loader = get_fashionmnist_test_loader(config.batch_size, config.data_path)
     
     # Initialize model, optimizer
     model = SOPCNN(num_classes=config.num_classes).to(config.device)
@@ -38,6 +39,7 @@ def main():
         test(model, test_loader, config, split_name='test')
         test(model, inverted_test_loader, config, split_name='inverted_test')
         test(model, usps_test_loader, config, split_name='usps_test')
+        test(model, fashionmnist_test_loader, config, split_name='fashionmnist_test')
 
 if __name__ == '__main__':
     main()
